@@ -12,11 +12,12 @@ const what = new Audio('/sounds/what.wav')
 const force = new Audio('/sounds/forceBeWithYou.mp3')
 const r2d2 = new Audio('/sounds/r2d2.mp3')
 const battle = new Audio('/sounds/battle_sfx.wav')
+const chewy = new Audio('/sounds/chewy.wav')
 
 themeSong.play()
 vader.play()
 
-function startingMoles() {
+function startingFighters() {
   const randomStart = Math.floor(Math.random() * 3 + 1)
   for (let i = 0; i < randomStart; i++) {
     const randomNum = Math.floor(Math.random() * 9 + 1)
@@ -34,7 +35,7 @@ function startingMoles() {
   }
 }
 
-function randMoles() {
+function randomFighters() {
   const randomNum = Math.floor(Math.random() * 9 + 1)
   const randMole = document.querySelector(`.hole${randomNum}`)
   const randomFighter = Math.floor(Math.random() * 11 + 1)
@@ -49,17 +50,17 @@ function randMoles() {
   }
 }
 
-const intervalMole = setInterval(randMoles, 250)
+const intervalMole = setInterval(randomFighters, 250)
 
-function removeMoles() {
+function removeFighters() {
   const randomNum = Math.floor(Math.random() * 9 + 1)
   const randMole = document.querySelector(`.hole${randomNum}`)
   randMole.src = 'images/hole.png'
 }
 
-const intervalRemove = setInterval(removeMoles, 400)
+const intervalRemove = setInterval(removeFighters, 400)
 
-startingMoles()
+startingFighters()
 
 var count = 0
 container.addEventListener('click', function (e) {
@@ -113,6 +114,9 @@ let countdown = setInterval(function () {
     timer.innerHTML = `Time Left: ${timeleft}`
   }else if (timeleft == 12){
     battle.play()
+    timer.innerHTML = `Time Left: ${timeleft}`
+  }else if (timeleft == 6){
+    chewy.play()
     timer.innerHTML = `Time Left: ${timeleft}`
   }else {
     timer.innerHTML = `Time Left: ${timeleft}`;

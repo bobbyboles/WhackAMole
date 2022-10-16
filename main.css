@@ -30,20 +30,23 @@ body {
   color: white;
   background-color: black;
   margin: auto;
-  padding: 20px;
+  /* padding: 20px; */
   border: 3px solid whitesmoke;
   width: 40%;
+  font-family: 'Silkscreen', cursive;
+
 }
 
 .close{
   color: white;
   float: right;
   font-weight: bold;
+  font-size: 30px;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: grey;
   text-decoration: none;
   cursor: pointer;
 }

@@ -2,8 +2,13 @@
 body {
   display:flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
+  min-height: 100vh;
+  background-image: url('/images/space.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
 }
 
 /*This styling is for the modal*/
@@ -22,7 +27,8 @@ body {
 }
 
 .modalContent{
-  background-color: #fefefe;
+  color: white;
+  background-color: black;
   margin: auto;
   padding: 20px;
   border: 1px solid black;
@@ -30,9 +36,8 @@ body {
 }
 
 .close{
-  color: #aaaaaa;
+  color: white;
   float: right;
-  font: 28px;
   font-weight: bold;
 }
 
@@ -52,33 +57,47 @@ body {
 
 
 .container{
-  height: 50em;
-  width: 50em;
+  height: 25em;
+  width: 25em;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border: black solid 1px;
+  border: white solid 3px;
 }
 
-div{
+.imageDiv{
   margin: 0;
+  height: 7em;
+  width: 7em;
 }
 
 .scoreContainer{
   display: flex;
+  color: white;
+  justify-content: space-between;
+  width: 25em;
 }
 
 .score{
-  border: black 1px solid;
-  width: 2em;
-  font-size: 40px;
+  font-size: 25px;
   text-align: center;
+  font-weight: bold;
 }
 .countdown{
-  border: black 1px solid;
-  width: 2em;
-  font-size: 40px;
+  font-size: 25px;
   text-align: center;
+  font-weight: bold;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+
 }
 
+.logo{
+  height: 15em;
+  width: 50em;
+  text-align: center;
+  top: 0;
+}
 

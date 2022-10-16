@@ -19,16 +19,16 @@ vader.play()
 
 function randomFighters() {
   const randomNum = Math.floor(Math.random() * 9 + 1)
-  const randMole = document.querySelector(`.hole${randomNum}`)
+  const randomSpace = document.querySelector(`.space${randomNum}`)
   const randomFighter = Math.floor(Math.random() * 11 + 1)
   if (randomFighter < 5) {
-    randMole.src = 'images/tie_fighter1.webp'
+    randomSpace.src = 'images/tie_fighter1.webp'
   } else if (randomFighter < 9 && randomFighter > 4) {
-    randMole.src = 'images/tie_fighter2.webp'
+    randomSpace.src = 'images/tie_fighter2.webp'
   } else if (randomFighter == 10) {
-    randMole.src = 'images/darth.webp'
+    randomSpace.src = 'images/darth.webp'
   } else if (randomFighter == 11) {
-    randMole.src = 'images/xwing.webp'
+    randomSpace.src = 'images/xwing.webp'
   }
 }
 
@@ -36,8 +36,8 @@ const intervalAdd = setInterval(randomFighters, 250)
 
 function removeFighters() {
   const randomNum = Math.floor(Math.random() * 9 + 1)
-  const randMole = document.querySelector(`.hole${randomNum}`)
-  randMole.src = ''
+  const randomSpace = document.querySelector(`.space${randomNum}`)
+  randomSpace.src = ''
 }
 
 const intervalRemove = setInterval(removeFighters, 400)

@@ -5,6 +5,7 @@ const span = document.querySelector(".close")
 const modal = document.querySelector(".modal")
 const splash = document.querySelector('.endSplash')
 const themeSong = new Audio('star-wars-theme-song.mp3')
+const vaderNo = new Audio('no.mp3')
 const vader = new Audio('vaderIntro.mp3')
 
 themeSong.play()
@@ -61,21 +62,19 @@ container.addEventListener('click', function (e) {
     e.target.src = `${e.target.baseURI}images/hole.png`
     count++
     const pew = new Audio('pew.mp3')
-
     pew.play()
   } else if (e.target.src === `${e.target.baseURI}images/tie_fighter2.webp`) {
     e.target.src = `${e.target.baseURI}images/hole.png`
     count++
     const pew = new Audio('pew.mp3')
-
     pew.play()
 
   } else if (e.target.src === `${e.target.baseURI}images/darth.webp`) {
     e.target.src = `${e.target.baseURI}images/hole.png`
     count += 10
     const pew = new Audio('pew.mp3')
-
     pew.play()
+    vaderNo.play()
 
   } else if (e.target.src === `${e.target.baseURI}images/xwing.webp`) {
     e.target.src = `${e.target.baseURI}images/hole.png`
@@ -84,7 +83,6 @@ container.addEventListener('click', function (e) {
     pew.play()
     const luke = new Audio('luke.mp3')
     luke.play()
-
   }
   score.textContent = `Score: ${count}`
 })
@@ -99,7 +97,6 @@ let countdown = setInterval(function () {
     const force = new Audio('forceBeWithYou.mp3')
     force.play()
     splash.innerHTML = `Rebel Scum! Your Score: ${count}`
-
   } else {
     timer.innerHTML = `Time Left: ${timeleft}`;
   }

@@ -23,6 +23,18 @@ function randMoles() {
 
 startingMoles()
 
+let timeleft = 20;
+let countdown = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(countdown);
+    document.getElementById("countdown").innerHTML = 0;
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft;
+  }
+  timeleft -= 1;
+}, 1000);
+
+
 let count = 0
 container.addEventListener('click', function (e) {
   console.log(e)

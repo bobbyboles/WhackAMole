@@ -17,24 +17,6 @@ const chewy = new Audio('/sounds/chewy.wav')
 themeSong.play()
 vader.play()
 
-function startingFighters() {
-  const randomStart = Math.floor(Math.random() * 3 + 1)
-  for (let i = 0; i < randomStart; i++) {
-    const randomNum = Math.floor(Math.random() * 9 + 1)
-    const randMole = document.querySelector(`.hole${randomNum}`)
-    const randomFighter = Math.floor(Math.random() * 11 + 1)
-    if (randomFighter < 5) {
-      randMole.src = 'images/tie_fighter1.webp'
-    } else if (randomFighter < 9 && randomFighter > 4) {
-      randMole.src = 'images/tie_fighter2.webp'
-    } else if (randomFighter == 10) {
-      randMole.src = 'images/darth.webp'
-    } else if (randomFighter == 11) {
-      randMole.src = 'images/xwing.webp'
-    }
-  }
-}
-
 function randomFighters() {
   const randomNum = Math.floor(Math.random() * 9 + 1)
   const randMole = document.querySelector(`.hole${randomNum}`)
@@ -50,7 +32,7 @@ function randomFighters() {
   }
 }
 
-const intervalMole = setInterval(randomFighters, 250)
+const intervalAdd = setInterval(randomFighters, 250)
 
 function removeFighters() {
   const randomNum = Math.floor(Math.random() * 9 + 1)
@@ -60,7 +42,6 @@ function removeFighters() {
 
 const intervalRemove = setInterval(removeFighters, 400)
 
-startingFighters()
 
 var count = 0
 container.addEventListener('click', function (e) {

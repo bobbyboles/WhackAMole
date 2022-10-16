@@ -82,11 +82,13 @@ body {
   font-size: 25px;
   text-align: center;
   font-weight: bold;
+  font-family: 'Silkscreen', cursive;
 }
 .countdown{
   font-size: 25px;
   text-align: center;
   font-weight: bold;
+  font-family: 'Silkscreen', cursive;
 }
 img {
   max-width: 100%;

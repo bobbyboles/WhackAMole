@@ -16,24 +16,29 @@ function startingMoles() {
   }
 }
 
-function randMoles(string) {
+function randMoles() {
   const randomNum = Math.floor(Math.random() * 9 + 1)
   const randMole = document.querySelector(`.hole${randomNum}`)
-  if (randMole.src === string) {
-    randMoles(string)
-  } else {
-    randMole.src = 'images/mole.png'
-  }
+  randMole.src = 'images/mole.png'
 }
+
+const intervalMole = setInterval(randMoles, 250)
+
+function removeMoles() {
+  const randomNum = Math.floor(Math.random() * 9 + 1)
+  const randMole = document.querySelector(`.hole${randomNum}`)
+  randMole.src = 'images/hole.png'
+}
+
+const intervalRemove = setInterval(removeMoles, 400)
 
 startingMoles()
 
 var count = 0
 container.addEventListener('click', function (e) {
+  console.log(e)
   console.log(e.target.baseURI)
   if (e.target.src === `${e.target.baseURI}images/mole.png`) {
-    let clear = `${e.target.baseURI}images/mole.png`
-    randMoles(clear)
     e.target.src = `${e.target.baseURI}images/hole.png`
     count++
   }
@@ -41,13 +46,13 @@ container.addEventListener('click', function (e) {
 })
 
 let timeleft = 20;
-let countdown = setInterval(function(){
-  if(timeleft <= 0){
+let countdown = setInterval(function () {
+  if (timeleft <= 0) {
     clearInterval(countdown);
     timer.innerHTML = 0;
     modal.style.display = 'block'
     splash.innerHTML = `Wow! You clobbered ${count} Moles!`
-    
+
   } else {
     timer.innerHTML = timeleft;
   }
@@ -56,7 +61,7 @@ let countdown = setInterval(function(){
 
 
 
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
-  location.reload(); 
+  location.reload();
 }

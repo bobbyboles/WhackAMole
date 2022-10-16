@@ -74,7 +74,7 @@ div{
   font-size: 40px;
   text-align: center;
 }
-#countdown{
+.countdown{
   border: black 1px solid;
   width: 2em;
   font-size: 40px;

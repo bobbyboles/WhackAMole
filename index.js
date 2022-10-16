@@ -44,12 +44,12 @@ let timeleft = 20;
 let countdown = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(countdown);
-    document.getElementById("countdown").innerHTML = 0;
+    timer.innerHTML = 0;
     modal.style.display = 'block'
     splash.innerHTML = `Wow! You clobbered ${count} Moles!`
     
   } else {
-    document.getElementById("countdown").innerHTML = timeleft;
+    timer.innerHTML = timeleft;
   }
   timeleft -= 1;
 }, 1000);

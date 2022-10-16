@@ -16,11 +16,11 @@ function startingMoles() {
   }
 }
 
-function randMoles() {
+function randMoles(string) {
   const randomNum = Math.floor(Math.random() * 9 + 1)
   const randMole = document.querySelector(`.hole${randomNum}`)
-  if (randMole.src ==="http://127.0.0.1:5501/images/mole.png" ) {
-    randMoles()
+  if (randMole.src === string) {
+    randMoles(string)
   } else {
     randMole.src = 'images/mole.png'
   }
@@ -28,13 +28,13 @@ function randMoles() {
 
 startingMoles()
 
-
 var count = 0
 container.addEventListener('click', function (e) {
-  console.log(e)
-  if (e.target.src === "http://127.0.0.1:5501/images/mole.png") {
-    randMoles()
-    e.target.src = "http://127.0.0.1:5501/images/hole.png"
+  console.log(e.target.baseURI)
+  if (e.target.src === `${e.target.baseURI}images/mole.png`) {
+    let clear = `${e.target.baseURI}images/mole.png`
+    randMoles(clear)
+    e.target.src = `${e.target.baseURI}images/hole.png`
     count++
   }
   score.textContent = count

@@ -37,35 +37,37 @@ const intervalAdd = setInterval(randomFighters, 250)
 function removeFighters() {
   const randomNum = Math.floor(Math.random() * 9 + 1)
   const randMole = document.querySelector(`.hole${randomNum}`)
-  randMole.src = 'images/hole.png'
+  randMole.src = ''
 }
 
 const intervalRemove = setInterval(removeFighters, 400)
 
+function delayedHole(){
+}
 
 var count = 0
 container.addEventListener('click', function (e) {
   if (e.target.src === `${e.target.baseURI}images/tie_fighter1.webp`) {
-    e.target.src = `${e.target.baseURI}images/hole.png`
+    e.target.src = ``
     count++
     const pew = new Audio('/sounds/pew.mp3')
     pew.play()
 
   } else if (e.target.src === `${e.target.baseURI}images/tie_fighter2.webp`) {
-    e.target.src = `${e.target.baseURI}images/hole.png`
+    e.target.src = ``
     count++
     const pew = new Audio('/sounds/pew.mp3')
     pew.play()
 
   } else if (e.target.src === `${e.target.baseURI}images/darth.webp`) {
-    e.target.src = `${e.target.baseURI}images/hole.png`
+    e.target.src = ``
     count += 10
     const pew = new Audio('/sounds/pew.mp3')
     pew.play()
     vaderNo.play()
 
   } else if (e.target.src === `${e.target.baseURI}images/xwing.webp`) {
-    e.target.src = `${e.target.baseURI}images/hole.png`
+    e.target.src = ``
     count -= 10
     const pew = new Audio('/sounds/pew.mp3')
     pew.play()

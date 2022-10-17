@@ -19,17 +19,13 @@ const r2d2 = new Audio('/sounds/r2d2.mp3')
 const battle = new Audio('/sounds/battle_sfx.wav')
 const chewy = new Audio('/sounds/chewy.wav')
 
-// playing the theme song and vaders intro on load
-
-themeSong.play()
-vader.play()
-
 
 /*Function creates two random numbers, one for the random space class
 and the other for the random fighter spawn and assigns the random fighter to the random 
 space class*/
 
 function randomFighters() {
+  themeSong.play()
   const randomNum = Math.floor(Math.random() * 9 + 1)
   const randomSpace = document.querySelector(`.space${randomNum}`)
   const randomFighter = Math.floor(Math.random() * 11 + 1)
@@ -116,10 +112,10 @@ let timeleft = 20;
 let countdown = setInterval(function () {
   if (timeleft <= 0) {
     clearInterval(countdown);
-    themeSong.pause()
+    // themeSong.pause()
     timer.innerHTML = `Time Left: 0`;
     modal.style.display = 'block'
-    force.play()
+    // force.play()
     splash.innerHTML = `Rebel Scum! Your Score: ${count}`
   } else if (timeleft==18){
     trap.play()

@@ -107,3 +107,5 @@ img {
   top: 0;
 }
 
+/* fancy cursor */
+* {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur), auto !important;}

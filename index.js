@@ -71,7 +71,7 @@ on each click and created inside the control flow so that they are played reguar
 pew is finished. At the end the score is reflected in  the score class*/
 
 /*There is a bug where if e.taget.baseURI ends with .html when its locally hosted, this will not work and 
-must be reloaded until e.target.baseURI ends with the port. It's pretty infrequent but I'm going to submit with this bug.
+must be reloaded until e.target.baseURI ends with the port or just delete the .html off the page. It's pretty infrequent but I'm going to submit with this bug.
 The way around it would be to find a different target in the click event*/
 
 container.addEventListener('click', function (e) {
